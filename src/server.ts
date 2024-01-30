@@ -11,8 +11,8 @@ async function bootstrap() {
             CustomersResolvers,
             AppointmentsResolvers,
         ],
-        emitSchemaFile: path.resolve('src', 'schema', 'schema.gql'),
-        validate: true
+        emitSchemaFile: path.resolve('schema', 'schema.gql'),
+        validate: false
     })
 
     const server = new ApolloServer({

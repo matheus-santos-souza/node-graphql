@@ -1,0 +1,17 @@
+version: '3'
+
+services:
+  node-graphql:
+    build: 
+      context: .
+      dockerfile: Dockerfile
+      target: build
+    container_name: node-graphql
+    env_file:
+      - .env
+    command: npm run start:dev
+    ports:
+      - 4000:4000
+    volumes:
+      - /usr/src/app/node_modules
+      - ./:/usr/src/app
