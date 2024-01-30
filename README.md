@@ -3,14 +3,22 @@ Node.js com TypeScript e GraphQL
 
 Este projeto é uma aplicação Node.js utilizando TypeScript e GraphQL.
 
-Inicialização do Projeto
+Clone o repositório
 ------------------------
+    ```bash
+    git clone https://github.com/matheus-santos-souza/node-graphql.git
+    ```
 
-`docker compose up -d`
+Rodando o Projeto
+------------------------
+    ```bash
+    docker compose up -d
+    ```
 
 Navegue até
 ------------------------
 http://localhost:4000
+
 
 Tecnologias Utilizadas
 ----------------------

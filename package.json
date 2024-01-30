@@ -15,7 +15,6 @@
   "devDependencies": {
     "@types/node": "^20.11.6",
     "class-validator": "^0.13.2",
-    "nodemon": "^3.0.3",
     "prisma": "^5.8.1",
     "tsup": "^8.0.1",
     "tsx": "^4.7.0",
