@@ -8,6 +8,9 @@ Inicialização do Projeto
 
 `docker compose up -d`
 
+Navegue até
+------------------------
+http://localhost:4000
 
 Tecnologias Utilizadas
 ----------------------
