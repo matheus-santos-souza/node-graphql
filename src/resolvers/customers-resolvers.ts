@@ -4,7 +4,7 @@ import { CreateCustomerInput } from "../dtos/inputs/create-customer-input";
 import prisma from "../prisma";
 import { Appointment } from "../dtos/models/appointment-model";
 
-Resolver(() => Customer)
+@Resolver(() => Customer)
 export class CustomersResolvers {
     @Query(() => [Customer])
     async customers(): Promise<Customer[]> {
@@ -20,13 +20,14 @@ export class CustomersResolvers {
         return customer
     }
 
-    /* @FieldResolver(() => [Appointment], { defaultValue: [] })
-    async customer(@Root() customer: Customer) {
+    @FieldResolver(() => [Appointment])
+    async appointments(@Root() customer: Customer) {
         const appointments = await prisma.appointment.findMany({
             where: {
                 customerId: customer.id
             }
         })
         return appointments
-    }  */
+    }  
+
 }
