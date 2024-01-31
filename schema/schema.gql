@@ -38,6 +38,8 @@ type Mutation {
 }
 
 type Query {
+  appointment(id: String): Appointment
+  appointments: [Appointment!]!
+  customer(id: String): Customer
   customers: [Customer!]!
-  findAllAppointments: [Appointment!]!
 }

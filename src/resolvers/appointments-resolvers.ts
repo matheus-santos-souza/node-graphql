@@ -6,8 +6,21 @@ import prisma from "../prisma";
 
 @Resolver(() => Appointment)
 export class AppointmentsResolvers {
+    @Query(() => Appointment, { nullable: true })
+    async appointment(@Arg("id", () => String, { nullable: true }) id: string) { 
+        if (!id) {
+            return null
+        }
+        const customer = await prisma.appointment.findFirst({
+            where: {
+                id
+            }
+        })
+        return customer
+    }
+
     @Query(() => [Appointment])
-    async findAllAppointments(): Promise<Appointment[]> {
+    async appointments(): Promise<Appointment[]> {
         const appointments = await prisma.appointment.findMany()
         return appointments
     }

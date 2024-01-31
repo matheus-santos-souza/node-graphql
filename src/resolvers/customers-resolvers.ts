@@ -6,6 +6,19 @@ import { Appointment } from "../dtos/models/appointment-model";
 
 @Resolver(() => Customer)
 export class CustomersResolvers {
+    @Query(() => Customer, { nullable: true })
+    async customer(@Arg("id", () => String, { nullable: true }) id: string) { 
+        if (!id) {
+            return null
+        }
+        const customer = await prisma.customer.findUnique({
+            where: {
+                id
+            }
+        })
+        return customer 
+    }
+
     @Query(() => [Customer])
     async customers(): Promise<Customer[]> {
         const customers = await prisma.customer.findMany()
